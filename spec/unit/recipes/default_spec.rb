@@ -20,14 +20,6 @@ RSpec.describe 'sonarr::default' do
       context "On #{platform} #{version}" do
         let(:opts) { { platform: platform, version: version } }
         include_examples 'converges successfully'
-        it 'creates the daemon user' do
-          expect(chef_run).to create_user('sonarr')
-        end
-
-        it 'creates the daemon group' do
-          expect(chef_run).to create_group('sonarr')
-        end
-
         it 'includs the _deb recipe' do
           expect(chef_run).to include_recipe 'sonarr::_deb'
         end

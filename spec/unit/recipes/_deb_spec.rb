@@ -29,11 +29,6 @@ RSpec.describe 'sonarr::_deb' do
     let(:opts) { { platform: 'debian', version: '8.0' } }
     include_examples 'converges successfully'
     include_examples 'adds the sonarr repo and pkg'
-    it 'creates the systemd init service' do
-      expect(chef_run).to create_sonarr_init_service('sonarr').with(
-        style: 'systemd'
-      )
-    end
   end
 
   %w(12.04 14.04).each do |version|
@@ -41,11 +36,6 @@ RSpec.describe 'sonarr::_deb' do
       let(:opts) { { platform: 'ubuntu', version: version } }
       include_examples 'converges successfully'
       include_examples 'adds the sonarr repo and pkg'
-      it 'creates the upstart service' do
-        expect(chef_run).to create_sonarr_init_service('sonarr').with(
-          style: 'upstart'
-        )
-      end
     end
   end
 end
