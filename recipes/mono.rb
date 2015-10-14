@@ -25,8 +25,6 @@ additional_repos.each do |mono_repository|
   sonarr_mono_repo mono_repository
 end
 
-packages = node['sonarr']['mono']['packages']
-
-packages.each do |pkg|
+node['sonarr']['mono']['packages'].each do |pkg|
   package pkg
 end
