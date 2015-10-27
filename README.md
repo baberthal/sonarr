@@ -54,12 +54,16 @@ lwrp if the user wishes to configure additional mono repositories.
 ### sonarr_mono_repo
 #### Properties
 `repo_name` - The name of the repository to add.
+
 `uri` - The uri of the repository being added. Defaults to
 `http://download.mono-project.com/repo/$DISTRO`. Should not need to be changed.
+
 `components` - Which repository components to include. Defaults to `main` and
 should not need to be changed.
+
 `keyserver` - The keyserver to use for the apt repository. Defaults to
 `hkp://keyserver.ubuntu.com` for Ubuntu systems.
+
 `key` - The key to use to verify the package downloads. Defaults to
 `3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF`, the key published on the mono
 project website.
